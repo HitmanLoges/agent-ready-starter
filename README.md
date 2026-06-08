@@ -112,9 +112,10 @@ v0 covers the **read-only discovery + one callable tool** path — the 80% that 
 used. Paid/authenticated tools, metering, and remote hosting are deliberately out of scope here
 (the MCP tool contract is written to extend to them later — see `mcp/README.md`).
 
-Maintained **best-effort, no SLA.** The `llms.txt` and MCP specs move; this template will be
-updated when they break, but file an issue rather than expecting support. If you want it set up
-and verified *for* you, that's a separate paid service.
+**Maintenance:** the `llms.txt` and MCP specs move, so this template is reviewed against them
+**roughly quarterly** and patched when something breaks — **best-effort, no SLA.** Open an issue
+for anything broken; that's the fastest way to get it fixed. Want it set up and verified *for*
+you, or kept current as the specs change? That's a separate paid service.
 
 ## License
 
