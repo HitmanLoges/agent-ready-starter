@@ -1,0 +1,45 @@
+openapi: 3.1.0
+info:
+  title: {{SITE_NAME}} Public API
+  version: "0.1.0"
+  description: >
+    Read-only, public, aggregate data from {{SITE_NAME}}. These endpoints
+    require no authentication and return only aggregate, non-personal data.
+    They exist so AI agents and other clients can discover and consume
+    {{SITE_NAME}}'s public data.
+  contact:
+    name: {{SITE_NAME}}
+    url: {{SITE_URL}}
+servers:
+  - url: {{SITE_URL}}
+    description: Production
+paths:
+  {{ENDPOINT_PATH}}:
+    get:
+      operationId: {{ENDPOINT_OPERATION_ID}}
+      summary: {{ENDPOINT_SUMMARY}}
+      description: >
+        {{ENDPOINT_DESCRIPTION}}
+      tags:
+        - public
+      responses:
+        "200":
+          description: Aggregate public data
+          content:
+            application/json:
+              schema:
+                # Replace this with your real response schema.
+                type: object
+                additionalProperties: true
+                properties:
+                  asOf:
+                    type: string
+                    format: date-time
+                    description: ISO 8601 timestamp of this snapshot.
+        "503":
+          description: Backing data store temporarily unavailable.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true

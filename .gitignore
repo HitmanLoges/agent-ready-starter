@@ -1,0 +1,5 @@
+node_modules/
+*.log
+
+# Your own filled-in config (copy config.example.json -> config.json)
+config.json

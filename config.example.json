@@ -1,0 +1,17 @@
+{
+  "siteName": "Example",
+  "siteUrl": "https://example.com",
+  "oneLiner": "Example is a <one sentence on what your product does>. This file tells AI agents what Example is and where its machine-readable, read-only public data lives.",
+  "operator": "Your Name (solo builder)",
+  "endpoint": {
+    "path": "/api/status",
+    "operationId": "getStatus",
+    "summary": "Aggregate public status",
+    "description": "Returns aggregate, non-personal public data. No authentication required. Response is cached and refreshed periodically; see `asOf` for the snapshot time."
+  },
+  "mcpTool": {
+    "name": "get_status",
+    "title": "Get Example status",
+    "description": "Returns Example's public, read-only aggregate data. Read-only, no authentication, aggregate (non-personal) data only."
+  }
+}

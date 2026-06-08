@@ -1,0 +1,20 @@
+{
+  "name": "agent-ready-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Minimal MCP server exposing one read-only public endpoint as an agent tool.",
+  "type": "module",
+  "bin": {
+    "agent-ready-mcp": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "smoke": "node smoke-test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  }
+}

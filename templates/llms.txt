@@ -1,0 +1,23 @@
+# {{SITE_NAME}}
+
+> {{ONE_LINER}}
+
+## What an agent can do here
+
+{{SITE_NAME}} exposes a small, read-only public surface. No authentication is required for the endpoints listed below, and they return only aggregate, non-personal data. A machine-readable description of this surface is published as an OpenAPI document.
+
+- [OpenAPI description]({{SITE_URL}}/openapi.yaml): Machine-readable spec for {{SITE_NAME}}'s public, read-only endpoints.
+- [{{ENDPOINT_SUMMARY}} (JSON)]({{SITE_URL}}{{ENDPOINT_PATH}}): {{ENDPOINT_DESCRIPTION}}
+
+## MCP endpoint (for agents)
+
+{{SITE_NAME}} serves a Model Context Protocol (MCP) server exposing:
+
+- `{{TOOL_NAME}}` (free) — {{TOOL_DESCRIPTION}}
+
+Run it locally over stdio (see `mcp/README.md`), or host it over Streamable HTTP and advertise the URL here once it is live.
+
+## Contact
+
+- Web: {{SITE_URL}}
+- Operator: {{OPERATOR}}
