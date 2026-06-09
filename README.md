@@ -85,6 +85,9 @@ Claude Desktop or host it remotely.
 - [ ] `npm run smoke` in `mcp/` prints `PASS` against your live endpoint.
 - [ ] `llms.txt` only points at **read-only, non-personal** data (no auth, no PII).
 - [ ] You can paste your `llms.txt` URL to an agent and it can explain and call your endpoint.
+- [ ] *(advanced, optional)* If you serve a static site that can't run an MCP server, consider the
+  emerging `.well-known` agent feeds — `mcp.llmfeed.json` (LLMFeed) and `agentdir.json`. These are
+  **draft/experimental** specs, not required for v0, but they're where static-host discovery is heading.
 
 ---
 
