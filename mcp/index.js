@@ -13,6 +13,7 @@
  */
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { pathToFileURL } from "node:url";
 import { registerExampleTool } from "./example-tool.mjs";
 
 const BASE_URL = (process.env.BASE_URL || "https://example.com").replace(/\/+$/, "");
@@ -33,7 +34,7 @@ const server = new McpServer({ name: "agent-ready", version: "0.1.0" });
 registerExampleTool(server, fetchData, () => `Source: ${BASE_URL}${ENDPOINT_PATH}`);
 
 // Only start the stdio transport when run directly (not when imported by tests).
-const isMain = process.argv[1] && import.meta.url === `file://${process.argv[1]}`;
+const isMain = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
 if (isMain) {
   const transport = new StdioServerTransport();
   await server.connect(transport);
