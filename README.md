@@ -19,6 +19,15 @@ file and ship.
 
 ---
 
+### Not sure where you stand? Check your site first.
+
+Before you clone, see what an agent already can and can't do with your site:
+**[agentreadycheck.com](https://agentreadycheck.com)** pastes a URL and returns a per-layer
+scorecard (llms.txt, openapi.yaml, MCP endpoint) with a one-line fix for each gap. Zero install.
+This repo is the fix; the validator is the diagnosis.
+
+---
+
 ## Quickstart (~30 min)
 
 > Prereqs: Node 18+, and a public endpoint that returns JSON (even a tiny `{"asOf": "..."}` is
