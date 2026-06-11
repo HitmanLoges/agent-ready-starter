@@ -19,6 +19,12 @@ export const TOOL_CONFIG = {
       "Read-only, no authentication, aggregate (non-personal) data only.",
   // Empty input schema = the tool takes no arguments. Add fields here if needed.
   inputSchema: {},
+  // NO outputSchema on purpose. If you add one, you MUST also return a
+  // `structuredContent` object from the handler below (see the AFTER block),
+  // or spec-compliant clients (Cursor, Claude) reject every tools/call with
+  // -32600 while the server still answers 200 — a silent, prod-down break.
+  // The smoke test asserts this contract for you. Contract per MCP spec
+  // 2025-06-18; failure mode documented at app.pushrealm.com/learning/501.
 };
 
 /** Render a raw response object into a short, agent-readable text block. */
@@ -47,6 +53,9 @@ export function registerExampleTool(server, fetchData, sourceNote) {
           { type: "text", text: formatResponse(data) },
           { type: "text", text: `${extra}Raw JSON:\n${JSON.stringify(data, null, 2)}` },
         ],
+        // If you add an `outputSchema` to TOOL_CONFIG, uncomment the next line
+        // so the result carries the structured object compliant clients require:
+        // structuredContent: data,
       };
     } catch (err) {
       return {
